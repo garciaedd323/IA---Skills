@@ -1,0 +1,30 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python (para cuando skills/ejemplos/ tenga scripts/ en Python)
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Node.js (para cuando skills/ejemplos/ tenga scripts/ en JS/TS)
+node_modules/
+npm-debug.log*
+
+# Credenciales y variables de entorno — NUNCA subir esto al repo
+.env
+.env.*
+!.env.example
+
+# Archivos temporales de trabajo
+*.tmp
+*.log
