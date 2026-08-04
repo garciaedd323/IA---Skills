@@ -36,6 +36,8 @@ IA-skills/
 
 - [Dónde colocar una Skill para que Claude Code la detecte](./skills/notas/donde-colocar-una-skill.md) — 🟢 **Verificado en la práctica.** Las dos rutas posibles (`.claude/skills/` por proyecto vs `~/.claude/skills/` global), el error más común (anidar un nivel de más), el "costo idle" de ~100 tokens por skill al iniciar sesión, detección de cambios en caliente (con la excepción del primer `skills/`), y la confirmación real de una Skill cargando correctamente en Claude Code.
 
+- [Tool vs Skill: dos formas distintas de darle capacidades a una IA](./skills/notas/tool-vs-skill.md) — la diferencia entre una función invocable con esquema fijo (Tool) y conocimiento procedimental que el modelo lee y aplica con criterio (Skill), el flujo real de cómo trabajan juntas (registro → disparo → carga → aplicación → combinación), por qué una Skill depende de Tools básicas para funcionar (lectura de archivos, ejecución de código), y cómo se vería armar este mecanismo desde cero fuera de Claude Code. Incluye analogías cotidianas (teléfono con número específico vs manual de un abogado experto).
+
 ### `skills/ejemplos/`
 
 - **`nota-tecnica-con-analogias/`** — Skill completa y funcional (probada en producción), que genera notas técnicas siguiendo el mismo estilo usado en este repo (analogía general, secciones numeradas con analogías, tabla resumen, cierre de "por qué importa"). Incluye `SKILL.md` y una plantilla en blanco (`assets/plantilla-nota.md`) lista para copiar a cualquier proyecto en `.claude/skills/`.
@@ -48,7 +50,7 @@ IA-skills/
 - [x] Cómo crear una Skill propia, paso a paso
 - [x] Dónde colocar una Skill en Claude Code (verificado en la práctica)
 - [x] Ejemplo real de una Skill sencilla, construida y probada de principio a fin
-- [ ] Aclarar Tool vs Skill como concepto propio (diferencia entre función invocable y conocimiento procedimental)
+- [x] Aclarar Tool vs Skill como concepto propio (diferencia entre función invocable y conocimiento procedimental)
 - [ ] Cómo implementar Skills en claude.ai / Claude Cowork (pendiente de confirmar, distinto a Claude Code)
 - [ ] Ejercicios propios para practicar la creación de Skills
 - [ ] _(el resto del repo se irá definiendo a medida que el aprendizaje avance)_
