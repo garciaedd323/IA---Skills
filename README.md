@@ -40,6 +40,8 @@ IA-skills/
 
 - [Skills vs MCP vs Subagentes vs Slash Commands](./skills/notas/skills-vs-mcp-vs-subagentes.md) — los cuatro mecanismos que le dan capacidades a Claude, comparados directamente: MCP (acceso a sistemas externos), Skill (criterio/conocimiento aplicado automáticamente), Subagente (tarea grande resuelta en contexto aislado), y Slash command (atajo disparado manualmente). Incluye un árbol de decisión simple para elegir cuál usar, y la conexión explícita con un repo de investigación de MCP.
 
+- [Cómo escribir buenas instrucciones dentro de una Skill: grados de libertad](./skills/notas/grados-de-libertad.md) — cuánta rigidez darle al modelo según qué tan determinista es la tarea (baja libertad con instrucciones exactas o scripts, alta libertad con principios y ejemplos), por qué el exceso de SIEMPRE/NUNCA en mayúsculas es una señal de alerta, cuándo algo debería ser un script en vez de texto, y cómo cambia el criterio de evaluación entre tareas objetivas y subjetivas. Incluye el ejemplo aplicado a la propia Skill `nota-tecnica-con-analogias` ya construida.
+
 ### `skills/ejemplos/`
 
 - **`nota-tecnica-con-analogias/`** — Skill completa y funcional (probada en producción), que genera notas técnicas siguiendo el mismo estilo usado en este repo (analogía general, secciones numeradas con analogías, tabla resumen, cierre de "por qué importa"). Incluye `SKILL.md` y una plantilla en blanco (`assets/plantilla-nota.md`) lista para copiar a cualquier proyecto en `.claude/skills/`.
@@ -56,7 +58,7 @@ IA-skills/
 - [x] Skills vs MCP vs Subagentes vs Slash Commands
 - [ ] Cómo implementar Skills en claude.ai / Claude Cowork (pendiente de confirmar, distinto a Claude Code — puesto en pausa deliberadamente por ahora)
 - [ ] Ejercicios propios para practicar la creación de Skills
-- [ ] Cómo escribir buenas instrucciones dentro de una Skill (grados de libertad: rigidez vs criterio según el tipo de tarea)
+- [x] Cómo escribir buenas instrucciones dentro de una Skill (grados de libertad: rigidez vs criterio según el tipo de tarea)
 - [ ] Seguridad y confianza al instalar/publicar Skills de terceros (retomando el "principio de no sorpresa")
 - [ ] Cómo evaluar rigurosamente que una Skill funciona bien (más allá de "probé 2-3 prompts")
 - [ ] Qué pasa cuando dos Skills se superponen en su `description`
