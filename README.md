@@ -44,6 +44,8 @@ IA-skills/
 
 - [Skills sueltas vs Skills empaquetadas en un plugin](./skills/notas/skills-como-plugin.md) — qué es técnicamente un plugin de Claude Code (`.claude-plugin/plugin.json` + `skills/`/`agents/`/`commands/`/`hooks/`/`.mcp.json`), cómo se distribuye vía marketplace, el namespacing `plugin:skill` que resuelve la colisión de nombre (no la semántica) entre Skills, la diferencia de ciclo de vida frente a una Skill suelta, y el prefijo "primo" por carpeta de proyecto que no hay que confundir con este. Incluye nota explícita de qué queda pendiente de verificar en la práctica.
 
+- [Cómo distribuir un marketplace de plugins entre computadoras distintas](./skills/notas/distribuir-marketplace-entre-pcs.md) — por qué una ruta local al marketplace solo sirve dentro de la misma máquina, el flujo real con dos personas separadas (crear el repo de git, publicarlo en GitHub, y del otro lado `/plugin marketplace add` + `/plugin install`), el requisito de que `marketplace.json` viva en la raíz del repositorio publicado (y por qué eso vuelve al taller `taller-marketplace/` de este repo no instalable tal cual desde otra computadora), la variante con repositorio privado, y la alternativa sin git vía `.zip` + `--plugin-dir`.
+
 ### `skills/ejemplos/`
 
 - **`nota-tecnica-con-analogias/`** — Skill completa y funcional (probada en producción), que genera notas técnicas siguiendo el mismo estilo usado en este repo (analogía general, secciones numeradas con analogías, tabla resumen, cierre de "por qué importa"). Incluye `SKILL.md` y una plantilla en blanco (`assets/plantilla-nota.md`) lista para copiar a cualquier proyecto en `.claude/skills/`.
@@ -64,6 +66,7 @@ IA-skills/
 - [x] Skills vs MCP vs Subagentes vs Slash Commands
 - [ ] Cómo implementar Skills en claude.ai / Claude Cowork (pendiente de confirmar, distinto a Claude Code — puesto en pausa deliberadamente por ahora)
 - [x] Ejercicios propios para practicar la creación de Skills (primer taller: skill empaquetada como plugin — pendiente de correr en una instalación real de Claude Code CLI para confirmar en la práctica)
+- [x] Cómo distribuir un marketplace de plugins entre computadoras distintas (ruta local vs repositorio de git, requisito de `marketplace.json` en la raíz, alternativa sin git vía `.zip`)
 - [x] Cómo escribir buenas instrucciones dentro de una Skill (grados de libertad: rigidez vs criterio según el tipo de tarea)
 - [x] Skills sueltas vs Skills empaquetadas en un plugin (namespacing, marketplace, ciclo de vida) — resuelve parcialmente la colisión de nombre, la colisión semántica de `description` sigue abierta
 - [ ] Seguridad y confianza al instalar/publicar Skills de terceros (retomando el "principio de no sorpresa")
