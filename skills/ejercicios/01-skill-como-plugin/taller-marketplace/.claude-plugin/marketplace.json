@@ -1,0 +1,13 @@
+{
+  "name": "taller-marketplace",
+  "owner": {
+    "name": "Tu nombre (reemplazar antes de probar)"
+  },
+  "plugins": [
+    {
+      "name": "mi-primer-plugin",
+      "source": "./plugins/mi-primer-plugin",
+      "description": "Plugin de practica: skill para generar mensajes de commit en espanol"
+    }
+  ]
+}

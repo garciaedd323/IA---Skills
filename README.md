@@ -42,9 +42,15 @@ IA-skills/
 
 - [Cómo escribir buenas instrucciones dentro de una Skill: grados de libertad](./skills/notas/grados-de-libertad.md) — cuánta rigidez darle al modelo según qué tan determinista es la tarea (baja libertad con instrucciones exactas o scripts, alta libertad con principios y ejemplos), por qué el exceso de SIEMPRE/NUNCA en mayúsculas es una señal de alerta, cuándo algo debería ser un script en vez de texto, y cómo cambia el criterio de evaluación entre tareas objetivas y subjetivas. Incluye el ejemplo aplicado a la propia Skill `nota-tecnica-con-analogias` ya construida.
 
+- [Skills sueltas vs Skills empaquetadas en un plugin](./skills/notas/skills-como-plugin.md) — qué es técnicamente un plugin de Claude Code (`.claude-plugin/plugin.json` + `skills/`/`agents/`/`commands/`/`hooks/`/`.mcp.json`), cómo se distribuye vía marketplace, el namespacing `plugin:skill` que resuelve la colisión de nombre (no la semántica) entre Skills, la diferencia de ciclo de vida frente a una Skill suelta, y el prefijo "primo" por carpeta de proyecto que no hay que confundir con este. Incluye nota explícita de qué queda pendiente de verificar en la práctica.
+
 ### `skills/ejemplos/`
 
 - **`nota-tecnica-con-analogias/`** — Skill completa y funcional (probada en producción), que genera notas técnicas siguiendo el mismo estilo usado en este repo (analogía general, secciones numeradas con analogías, tabla resumen, cierre de "por qué importa"). Incluye `SKILL.md` y una plantilla en blanco (`assets/plantilla-nota.md`) lista para copiar a cualquier proyecto en `.claude/skills/`.
+
+### `skills/ejercicios/`
+
+- **[`01-skill-como-plugin/`](./skills/ejercicios/01-skill-como-plugin/GUIA.md)** — Taller desde cero, archivo por archivo y línea por línea, con analogías: crea la carpeta del plugin, el manifiesto `plugin.json`, la skill `SKILL.md`, la prueba local con `--plugin-dir`, y (opcional) el `marketplace.json` para distribuirlo, explicando qué hace cada línea de cada archivo antes de escribirla. Incluye una carpeta `taller-marketplace/` ya resuelta como "solución" para comparar, y un dato a revisar en `que-son-las-skills.md` sobre si `name` es realmente obligatorio en el frontmatter de un `SKILL.md`.
 
 ---
 
@@ -57,11 +63,12 @@ IA-skills/
 - [x] Aclarar Tool vs Skill como concepto propio (diferencia entre función invocable y conocimiento procedimental)
 - [x] Skills vs MCP vs Subagentes vs Slash Commands
 - [ ] Cómo implementar Skills en claude.ai / Claude Cowork (pendiente de confirmar, distinto a Claude Code — puesto en pausa deliberadamente por ahora)
-- [ ] Ejercicios propios para practicar la creación de Skills
+- [x] Ejercicios propios para practicar la creación de Skills (primer taller: skill empaquetada como plugin — pendiente de correr en una instalación real de Claude Code CLI para confirmar en la práctica)
 - [x] Cómo escribir buenas instrucciones dentro de una Skill (grados de libertad: rigidez vs criterio según el tipo de tarea)
+- [x] Skills sueltas vs Skills empaquetadas en un plugin (namespacing, marketplace, ciclo de vida) — resuelve parcialmente la colisión de nombre, la colisión semántica de `description` sigue abierta
 - [ ] Seguridad y confianza al instalar/publicar Skills de terceros (retomando el "principio de no sorpresa")
 - [ ] Cómo evaluar rigurosamente que una Skill funciona bien (más allá de "probé 2-3 prompts")
-- [ ] Qué pasa cuando dos Skills se superponen en su `description`
+- [ ] Qué pasa cuando dos Skills se superponen en su `description` (namespacing por plugin evita la colisión de nombre, pero no la semántica — ver nota de plugins)
 - [ ] Cómo versionar/mantener una Skill en el tiempo sin romper lo que ya funcionaba
 - [ ] _(el resto del repo se irá definiendo a medida que el aprendizaje avance)_
 
