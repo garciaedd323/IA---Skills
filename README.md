@@ -52,7 +52,9 @@ IA-skills/
 
 ### `skills/ejercicios/`
 
-- **[`01-skill-como-plugin/`](./skills/ejercicios/01-skill-como-plugin/GUIA.md)** — Taller desde cero, archivo por archivo y línea por línea, con analogías: crea la carpeta del plugin, el manifiesto `plugin.json`, la skill `SKILL.md`, la prueba local con `--plugin-dir`, y (opcional) el `marketplace.json` para distribuirlo, explicando qué hace cada línea de cada archivo antes de escribirla. Incluye una carpeta `taller-marketplace/` ya resuelta como "solución" para comparar, y un dato a revisar en `que-son-las-skills.md` sobre si `name` es realmente obligatorio en el frontmatter de un `SKILL.md`.
+- **[`01-skill-como-plugin/`](./skills/ejercicios/01-skill-como-plugin/GUIA.md)** — Taller desde cero, archivo por archivo y línea por línea, con analogías: crea la carpeta del plugin, el manifiesto `plugin.json`, la skill `SKILL.md`, la prueba local con `--plugin-dir`, y (opcional) el `marketplace.json` para distribuirlo, explicando qué hace cada línea de cada archivo antes de escribirla. Incluye una carpeta `taller-marketplace/` ya resuelta como "solución" para comparar.
+
+- **[`02-skill-con-script/`](./skills/ejercicios/02-skill-con-script/GUIA.md)** — Taller desde cero de una Skill que empaqueta un script real (`scripts/revisar_skill.py`, en Python) que Claude ejecuta en vez de solo leer, explicado función por función. Cubre el campo `allowed-tools` con `${CLAUDE_SKILL_DIR}` para aprobar ese comando de antemano, y `argument-hint` + `$ARGUMENTS` para pasarle una ruta al invocarla. La skill resultante (`auditor-skill-md/`) audita cualquier `SKILL.md` del repo por frontmatter válido, `description` presente, y límite de 500 líneas. Pendiente de correr en una máquina con Python instalado.
 
 ---
 
@@ -67,6 +69,7 @@ IA-skills/
 - [ ] Cómo implementar Skills en claude.ai / Claude Cowork (pendiente de confirmar, distinto a Claude Code — puesto en pausa deliberadamente por ahora)
 - [x] Ejercicios propios para practicar la creación de Skills (primer taller: skill empaquetada como plugin — pendiente de correr en una instalación real de Claude Code CLI para confirmar en la práctica)
 - [x] Cómo distribuir un marketplace de plugins entre computadoras distintas (ruta local vs repositorio de git, requisito de `marketplace.json` en la raíz, alternativa sin git vía `.zip`)
+- [x] Qué más puede llevar una Skill además de instrucciones en texto (segundo taller: skill con un script real en `scripts/`, y el resto de campos del frontmatter más allá de `name`/`description` — pendiente de correr en una máquina con Python instalado)
 - [x] Cómo escribir buenas instrucciones dentro de una Skill (grados de libertad: rigidez vs criterio según el tipo de tarea)
 - [x] Skills sueltas vs Skills empaquetadas en un plugin (namespacing, marketplace, ciclo de vida) — resuelve parcialmente la colisión de nombre, la colisión semántica de `description` sigue abierta
 - [ ] Seguridad y confianza al instalar/publicar Skills de terceros (retomando el "principio de no sorpresa")

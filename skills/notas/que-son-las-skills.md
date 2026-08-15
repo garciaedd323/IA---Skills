@@ -15,7 +15,7 @@ Una Skill es una **carpeta** con, como mínimo, un archivo llamado `SKILL.md`, q
 ```
 mi-skill/
 ├── SKILL.md (obligatorio)
-│   ├── Frontmatter YAML (name, description — obligatorios)
+│   ├── Frontmatter YAML (description — recomendado; name — opcional, si falta se usa el nombre de la carpeta)
 │   └── Instrucciones en Markdown
 └── Recursos empaquetados (opcionales)
     ├── scripts/     — código ejecutable para tareas repetitivas/deterministas
@@ -89,3 +89,7 @@ Una Skill nunca debería hacer algo distinto a lo que su descripción promete �
 ## 7. Por qué esto importa antes de crear una Skill propia
 
 Entender estas piezas (el `description` como mecanismo de activación, la carga progresiva, y qué va en cada carpeta opcional) es la base para el siguiente paso natural: construir una Skill propia desde cero, con una intención clara de qué debe hacer y cuándo debe activarse.
+
+---
+
+> **Corrección (verificada contra la documentación oficial):** esta nota decía originalmente que `name` y `description` eran ambos obligatorios en el frontmatter. En realidad, solo `description` es recomendado (ni siquiera obligatorio en sentido estricto), y `name` es opcional — si falta, se usa el nombre de la carpeta de la skill. El frontmatter, además, admite muchos más campos además de estos dos (por ejemplo `allowed-tools`, `disable-model-invocation`, `argument-hint`, `context: fork`), vistos en la práctica en el taller [Una Skill que incluye un script](../ejercicios/02-skill-con-script/GUIA.md).
