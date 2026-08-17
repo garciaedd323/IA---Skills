@@ -48,6 +48,8 @@ IA-skills/
 
 - [Seguridad y confianza al instalar Skills de terceros](./skills/notas/seguridad-instalar-skills-de-terceros.md) — por qué no hay sandboxing por defecto (los plugins corren con los mismos privilegios del usuario), los tres niveles reales de confianza (oficial, comunidad con screening automático, y cualquier otro sin revisión alguna), qué se puede inspeccionar antes de instalar vía el panel `/plugin` y su limitación en marketplaces locales, la revisión manual de `allowed-tools` como acción concreta recomendada, y el vector menos obvio de la inyección de contexto dinámico (`!comando`). Cierra explicando que ni los propios talleres de este repo quedan exentos de esta misma revisión.
 
+- [Cómo evaluar rigurosamente si una Skill funciona bien](./skills/notas/evaluar-una-skill-rigurosamente.md) — la metodología real que usa `skill-creator`, la skill oficial de Anthropic: las dos preguntas separadas (tasa de activación vs calidad del output), el conjunto de 20 queries con near-misses diseñados a propósito, el split entrenamiento/prueba 60/40 para evitar sobreajuste, la comparación con-skill-vs-sin-skill, la diferencia entre assertions objetivas y juicio humano cualitativo (conectada con `nota-tecnica-con-analogias` como caso subjetivo real), y el análisis de varianza con media y desviación estándar. Cierra reconociendo que esta skill de ejemplo del repo nunca fue evaluada con este rigor todavía.
+
 ### `skills/ejemplos/`
 
 - **`nota-tecnica-con-analogias/`** — Skill completa y funcional (probada en producción), que genera notas técnicas siguiendo el mismo estilo usado en este repo (analogía general, secciones numeradas con analogías, tabla resumen, cierre de "por qué importa"). Incluye `SKILL.md` y una plantilla en blanco (`assets/plantilla-nota.md`) lista para copiar a cualquier proyecto en `.claude/skills/`.
@@ -75,7 +77,7 @@ IA-skills/
 - [x] Cómo escribir buenas instrucciones dentro de una Skill (grados de libertad: rigidez vs criterio según el tipo de tarea)
 - [x] Skills sueltas vs Skills empaquetadas en un plugin (namespacing, marketplace, ciclo de vida) — resuelve parcialmente la colisión de nombre, la colisión semántica de `description` sigue abierta
 - [x] Seguridad y confianza al instalar/publicar Skills de terceros (retomando el "principio de no sorpresa" — los tres niveles reales de confianza, `allowed-tools` como punto de revisión concreto, y el vector de la inyección de contexto dinámico)
-- [ ] Cómo evaluar rigurosamente que una Skill funciona bien (más allá de "probé 2-3 prompts")
+- [x] Cómo evaluar rigurosamente que una Skill funciona bien (más allá de "probé 2-3 prompts" — metodología real de `skill-creator`: trigger rate con near-misses, split train/test, comparación con/sin skill, análisis de varianza)
 - [ ] Qué pasa cuando dos Skills se superponen en su `description` (namespacing por plugin evita la colisión de nombre, pero no la semántica — ver nota de plugins)
 - [ ] Cómo versionar/mantener una Skill en el tiempo sin romper lo que ya funcionaba
 - [ ] _(el resto del repo se irá definiendo a medida que el aprendizaje avance)_
