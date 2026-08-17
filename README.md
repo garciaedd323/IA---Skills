@@ -46,6 +46,8 @@ IA-skills/
 
 - [Cómo distribuir un marketplace de plugins entre computadoras distintas](./skills/notas/distribuir-marketplace-entre-pcs.md) — por qué una ruta local al marketplace solo sirve dentro de la misma máquina, el flujo real con dos personas separadas (crear el repo de git, publicarlo en GitHub, y del otro lado `/plugin marketplace add` + `/plugin install`), el requisito de que `marketplace.json` viva en la raíz del repositorio publicado (y por qué eso vuelve al taller `taller-marketplace/` de este repo no instalable tal cual desde otra computadora), la variante con repositorio privado, y la alternativa sin git vía `.zip` + `--plugin-dir`.
 
+- [Seguridad y confianza al instalar Skills de terceros](./skills/notas/seguridad-instalar-skills-de-terceros.md) — por qué no hay sandboxing por defecto (los plugins corren con los mismos privilegios del usuario), los tres niveles reales de confianza (oficial, comunidad con screening automático, y cualquier otro sin revisión alguna), qué se puede inspeccionar antes de instalar vía el panel `/plugin` y su limitación en marketplaces locales, la revisión manual de `allowed-tools` como acción concreta recomendada, y el vector menos obvio de la inyección de contexto dinámico (`!comando`). Cierra explicando que ni los propios talleres de este repo quedan exentos de esta misma revisión.
+
 ### `skills/ejemplos/`
 
 - **`nota-tecnica-con-analogias/`** — Skill completa y funcional (probada en producción), que genera notas técnicas siguiendo el mismo estilo usado en este repo (analogía general, secciones numeradas con analogías, tabla resumen, cierre de "por qué importa"). Incluye `SKILL.md` y una plantilla en blanco (`assets/plantilla-nota.md`) lista para copiar a cualquier proyecto en `.claude/skills/`.
@@ -72,7 +74,7 @@ IA-skills/
 - [x] Qué más puede llevar una Skill además de instrucciones en texto (segundo taller: skill con un script real en `scripts/`, y el resto de campos del frontmatter más allá de `name`/`description` — pendiente de correr en una máquina con Python instalado)
 - [x] Cómo escribir buenas instrucciones dentro de una Skill (grados de libertad: rigidez vs criterio según el tipo de tarea)
 - [x] Skills sueltas vs Skills empaquetadas en un plugin (namespacing, marketplace, ciclo de vida) — resuelve parcialmente la colisión de nombre, la colisión semántica de `description` sigue abierta
-- [ ] Seguridad y confianza al instalar/publicar Skills de terceros (retomando el "principio de no sorpresa")
+- [x] Seguridad y confianza al instalar/publicar Skills de terceros (retomando el "principio de no sorpresa" — los tres niveles reales de confianza, `allowed-tools` como punto de revisión concreto, y el vector de la inyección de contexto dinámico)
 - [ ] Cómo evaluar rigurosamente que una Skill funciona bien (más allá de "probé 2-3 prompts")
 - [ ] Qué pasa cuando dos Skills se superponen en su `description` (namespacing por plugin evita la colisión de nombre, pero no la semántica — ver nota de plugins)
 - [ ] Cómo versionar/mantener una Skill en el tiempo sin romper lo que ya funcionaba
