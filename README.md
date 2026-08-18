@@ -54,6 +54,8 @@ IA-skills/
 
 - [Cómo versionar una Skill en el tiempo sin romper lo que ya funcionaba](./skills/notas/versionar-una-skill-en-el-tiempo.md) — el hallazgo central, verificado contra el estándar oficial Agent Skills: no existe versionado integrado para una skill suelta (los cambios aplican de inmediato, sin staging ni rollback), en contraste con el `version` real y el mecanismo de `renames` que sí tienen los plugins. Cubre el riesgo poco obvio de que dos versiones de una misma skill convivan en la misma sesión tras editarla en caliente, la práctica de `skill-snapshot/` de `skill-creator`, y por qué git — el propio hábito de este repositorio — termina siendo la única estrategia de versionado real disponible.
 
+- [Cómo funcionan las Skills en Cowork y sesiones en la nube](./skills/notas/skills-en-cowork-y-la-nube.md) — por qué Cowork y la nube no leen `~/.claude/skills/` del disco, sino las skills habilitadas para la cuenta de claude.ai; el canal adicional exclusivo de la nube (project skills comiteadas al repo); el error real de "skill not found" en una routine y sus tres soluciones; el contraste con las Desktop scheduled tasks (siguen siendo locales); cómo sincronizar skills de la cuenta a una sesión local con `CLAUDE_CODE_SYNC_SKILLS`; y las protecciones de seguridad ya incorporadas para skills sincronizadas frente a la inyección de contexto dinámico.
+
 ### `skills/ejemplos/`
 
 - **`nota-tecnica-con-analogias/`** — Skill completa y funcional (probada en producción), que genera notas técnicas siguiendo el mismo estilo usado en este repo (analogía general, secciones numeradas con analogías, tabla resumen, cierre de "por qué importa"). Incluye `SKILL.md` y una plantilla en blanco (`assets/plantilla-nota.md`) lista para copiar a cualquier proyecto en `.claude/skills/`.
@@ -74,7 +76,7 @@ IA-skills/
 - [x] Ejemplo real de una Skill sencilla, construida y probada de principio a fin
 - [x] Aclarar Tool vs Skill como concepto propio (diferencia entre función invocable y conocimiento procedimental)
 - [x] Skills vs MCP vs Subagentes vs Slash Commands
-- [ ] Cómo implementar Skills en claude.ai / Claude Cowork (pendiente de confirmar, distinto a Claude Code — puesto en pausa deliberadamente por ahora)
+- [x] Cómo implementar Skills en claude.ai / Claude Cowork (Cowork y la nube no leen `~/.claude/skills/` del disco, sino las skills habilitadas para la cuenta; el error de "skill not found" en una routine y sus soluciones; sincronización con `CLAUDE_CODE_SYNC_SKILLS`)
 - [x] Ejercicios propios para practicar la creación de Skills (primer taller: skill empaquetada como plugin — pendiente de correr en una instalación real de Claude Code CLI para confirmar en la práctica)
 - [x] Cómo distribuir un marketplace de plugins entre computadoras distintas (ruta local vs repositorio de git, requisito de `marketplace.json` en la raíz, alternativa sin git vía `.zip`)
 - [x] Qué más puede llevar una Skill además de instrucciones en texto (segundo taller: skill con un script real en `scripts/`, y el resto de campos del frontmatter más allá de `name`/`description` — pendiente de correr en una máquina con Python instalado)
