@@ -52,6 +52,8 @@ IA-skills/
 
 - [Qué pasa cuando dos Skills se superponen en su `description`](./skills/notas/colision-semantica-de-description.md) — el contraste entre colisión de nombre (con reglas deterministas documentadas) y colisión semántica (sin ninguna regla de resolución en tiempo real), con un ejemplo real de este mismo ecosistema (`generador-mensaje-commit` de este repo vs `commit-commands` del marketplace oficial de Anthropic), las mitigaciones preventivas que sí existen (`disable-model-invocation`, `paths`, líneas de desambiguación, trigger-rate testing entre las dos skills), y la verdad incómoda de que ninguna resuelve el conflicto en el momento en que realmente ocurre.
 
+- [Cómo versionar una Skill en el tiempo sin romper lo que ya funcionaba](./skills/notas/versionar-una-skill-en-el-tiempo.md) — el hallazgo central, verificado contra el estándar oficial Agent Skills: no existe versionado integrado para una skill suelta (los cambios aplican de inmediato, sin staging ni rollback), en contraste con el `version` real y el mecanismo de `renames` que sí tienen los plugins. Cubre el riesgo poco obvio de que dos versiones de una misma skill convivan en la misma sesión tras editarla en caliente, la práctica de `skill-snapshot/` de `skill-creator`, y por qué git — el propio hábito de este repositorio — termina siendo la única estrategia de versionado real disponible.
+
 ### `skills/ejemplos/`
 
 - **`nota-tecnica-con-analogias/`** — Skill completa y funcional (probada en producción), que genera notas técnicas siguiendo el mismo estilo usado en este repo (analogía general, secciones numeradas con analogías, tabla resumen, cierre de "por qué importa"). Incluye `SKILL.md` y una plantilla en blanco (`assets/plantilla-nota.md`) lista para copiar a cualquier proyecto en `.claude/skills/`.
@@ -81,7 +83,7 @@ IA-skills/
 - [x] Seguridad y confianza al instalar/publicar Skills de terceros (retomando el "principio de no sorpresa" — los tres niveles reales de confianza, `allowed-tools` como punto de revisión concreto, y el vector de la inyección de contexto dinámico)
 - [x] Cómo evaluar rigurosamente que una Skill funciona bien (más allá de "probé 2-3 prompts" — metodología real de `skill-creator`: trigger rate con near-misses, split train/test, comparación con/sin skill, análisis de varianza)
 - [x] Qué pasa cuando dos Skills se superponen en su `description` (colisión semántica sin regla determinista de resolución en tiempo real — nota propia con ejemplo real y mitigaciones preventivas)
-- [ ] Cómo versionar/mantener una Skill en el tiempo sin romper lo que ya funcionaba
+- [x] Cómo versionar/mantener una Skill en el tiempo sin romper lo que ya funcionaba (no hay versionado integrado para skills sueltas — verificado contra el estándar oficial; contraste con `version`/`renames` de un plugin; git como estrategia real)
 - [ ] _(el resto del repo se irá definiendo a medida que el aprendizaje avance)_
 
 ---

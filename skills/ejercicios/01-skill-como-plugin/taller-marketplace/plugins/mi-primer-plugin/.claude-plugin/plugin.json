@@ -1,5 +1,5 @@
 {
   "name": "mi-primer-plugin",
   "description": "Plugin de practica: empaqueta una skill que genera mensajes de commit en espanol, siguiendo el estilo ya usado en este repositorio",
-  "version": "0.1.0"
+  "version": "0.2.0"
 }

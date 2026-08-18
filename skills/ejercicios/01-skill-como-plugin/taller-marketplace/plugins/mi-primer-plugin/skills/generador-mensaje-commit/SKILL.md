@@ -7,5 +7,6 @@ description: Genera un mensaje de commit en espanol, en minuscula y en modo impe
 Cuando el usuario describa los cambios que acaba de hacer y pida ayuda con el mensaje del commit:
 
 1. Resumir el cambio en una sola linea, en espanol, en minuscula, en modo imperativo (por ejemplo "agregar", "corregir", "actualizar", "eliminar"), sin punto final.
-2. Si el cambio tiene mas de un aspecto relevante, agregar un cuerpo de una o dos lineas debajo del titulo, separado por una linea en blanco.
-3. No inventar detalles que el usuario no haya mencionado explicitamente.
+2. Si el usuario menciona que el proyecto usa Conventional Commits, anteponer el prefijo correspondiente (`feat:`, `fix:`, `docs:`, `refactor:`) antes del resumen en minuscula.
+3. Si el cambio tiene mas de un aspecto relevante, agregar un cuerpo de una o dos lineas debajo del titulo, separado por una linea en blanco.
+4. No inventar detalles que el usuario no haya mencionado explicitamente.
